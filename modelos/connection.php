@@ -6,7 +6,7 @@
         private $database;
         private $con;
 
-        public function __construct($host, $user, $password, $database){
+        public function __construct($host = 'localhost', $user = 'root', $password = '', $database = 'usuario'){
             $this->host = 'localhost';
             $this->user = 'root';
             $this->password = '';

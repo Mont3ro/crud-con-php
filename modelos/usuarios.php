@@ -1,5 +1,5 @@
 <?php
-    include_once("connection.php");
+    include_once(__DIR__ . "/connection.php");
 
 class Usuarios{
     private $id;
@@ -22,7 +22,7 @@ class Usuarios{
     } //finalizacion del constructor
 
     public function listar (){
-        $sql = "SELECT * FROM usuarios";
+        $sql = "SELECT * FROM usuario";
         $resultado = $this->con->consultaRetorno($sql);
         
     }

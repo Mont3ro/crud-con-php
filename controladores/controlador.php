@@ -1,5 +1,5 @@
 <?php
-include_once("../modelos/usuarios.php");
+include_once(__DIR__ . "/../modelos/usuarios.php");
 
 class ControladorUsuario{
     private $usuarios;

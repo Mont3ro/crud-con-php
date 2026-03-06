@@ -1,6 +1,6 @@
 <?php
-    include_once("controladores/controlador.php");
-    include_once("controladores/enrutador.php");
+    include_once(__DIR__ . "/controladores/controlador.php");
+    include_once(__DIR__ . "/controladores/enrutador.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,13 +14,16 @@
     <nav>
         <ul>
             <li><a href="index.php">Inicio</a></li>
-            <li><a href="#">Registrar</a></li>
+            <li><a href="?cargar=crear">Registrar</a></li>
+
             
         </ul>
     </nav>
     <?php
        $enrutador=new Enrutador();
-       $enrutador->cargarVista("crear");
+       if ($enrutador ->validarVista($_GET['cargar'])) {
+        $enrutador->cargarVista($_GET['cargar']);
+       }
        
     ?>
 </body>
