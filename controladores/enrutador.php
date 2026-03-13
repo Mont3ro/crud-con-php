@@ -3,6 +3,9 @@
 class Enrutador{
     public function cargarVista($vista){
         switch($vista){
+            case 'inicio':
+                include_once(__DIR__ . "/../vistas/inicio.php");
+                break;
             case 'crear':
                 include_once(__DIR__ . "/../vistas/crear.php");
                 break;
@@ -22,10 +25,10 @@ class Enrutador{
 
     public function validarVista($variable){
         if  (empty($variable)) {
-            include_once ("../vistas/inicio.php");
-
+            include_once(__DIR__ . "/../vistas/inicio.php");
+            return false;
         } else {
             return true;
-
+        }
+    }
 }
-}}
